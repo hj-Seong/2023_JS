@@ -18,6 +18,64 @@
 
         // 변수 이름을 통해서 값을 꺼내서 사용할 수 있다
         console.log (num+10);
+
+        // 복합대입연산자
+        let numOpar = 0;
+        // 현재 변수에 1을 더해줄떄
+        numOpar = numOpar + 1; // numOpar :1
+        console.log(numOpar);
+
+        // 복합 대입연산자를 이용하여 1더해줌 
+        numOpar += 1; // numOpar :2
+        console.log(numOpar);
+
+        numOpar *= 3;
+        console.log(numOpar);
+
+        // 증감연산자 : 1씩 감소, 증가할때 사용
+        numOpar++;
+        console.log(numOpar);
+
+        // 후위 연산자 : 가장 마지막에 계산
+        // 실행순서 : 1)console.log(), 2)numOpar++ 
+        console.log(numOpar++);
+        console.log(numOpar);
+
+        // 전위 연산자 : 가장 처음에 계산
+        // 실행순서 :1) ++numOpar ,2) console.log()
+        console.log(++numOpar);
+        console.log(numOpar);
+
+        // 일반 계산식과 함께 사용할때도 가장 먼저
+        // 실행순서 : 1)++numOpar ,2) /5 ,3)console.log()
+        console.log(++numOpar/5);
+
+        /* 복합대입연산자와 증감연산자 실습*/
+        let sumNum = 0;
+        sumNum = sumNum +1;
+        console.log("sumNum: ",sumNum);
+
+        // 복합대입연산자
+        sumNum += 1;
+        console.log("sumNum: ",sumNum);
+
+        // 증감연산자
+        sumNum++;
+        console.log("sumNum: ",sumNum);
+
+        // 1씩 감소
+        sumNum = sumNum -1;
+        console.log("sumNum: ",sumNum);
+        
+        //복합대입연산자
+        sumNum -= 1;
+        console.log("sumNum: ",sumNum);
+
+        // 증감연산자
+        sumNum--;
+        console.log("sumNum: ",sumNum);
+
+
     </script>
 </body>
 </html>
