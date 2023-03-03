@@ -7,6 +7,33 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!-- 자바스크립트 -->
+    <script>
+        // 1. 변수 : score
+        // 2. 조건식/ 참일때 실행
+        //    score == 'A' / "참잘했습니다"
+        //    score == 'B' / "잘했습니다"
+        //    score == 'C' / "아쉽습니다"
+        //    score == 'D' / "분발하세요"
+        //    (그외의 값)default / "잘못된 점수"
+        let score = "F";
+        switch (score) {
+            case "A":
+                document.write("<p>참잘했습니다</p>");
+                break;
+            case "B":
+                document.write("<p>잘했습니다</p>");
+                break;
+            case "C":
+                document.write("<p>아쉽습니다</p>");
+                break;
+            case "D":
+                document.write("<p>분발하세요</p>");
+                break;
+            default : 
+                document.write("<p>잘못된 점수</p>")
+        }
+
+    </script>
 </body>
 </html>
