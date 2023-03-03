@@ -97,6 +97,48 @@
             document.write("<p>C</p>");
         }
 
+        // 조건문 전체 연습 
+        // 홀수 짝수 판별
+        // 1. 변수 : num
+        // 2. 조건식 : num%2 == 0 
+        // 참 : 짝수 / 거짓 : 홀수
+        let num = 31;
+        if (num%2 == 0) {
+            document.write("<p>짝수</p>")
+        } else {
+            document.write("<p>홀수</p>")
+        }
+
+        // 음수, 양수, 0 판별
+        // 1. 변수 : testNum
+        // 2. 조건/참일때 출력할내용:
+        //    testNum<0 / 음수
+        //    testNum>0 / 양수
+        //    그외의 수(0) / 0 
+        //   testNum == 0 / 0
+        let testNum = 0;
+        if (testNum<0) {
+            document.write("<p>음수</p>")
+        }else if (testNum>0) {
+            document.write("<p>양수</p>")
+        }else {
+            document.write("<p>0</p>")
+        }
+
+        // 구매한 가격을 입력하면 할인율이 적용된 금액 출력
+        // 1. 변수 : pay , 할인율
+        // 2. 조건식 / 참일때 실행할 내용 :
+        //    pay>=10000 / 5% 할인 : pay - 0.05*pay
+        //    pay>=50000 / 10% 할인 : pay - 0.1*pay
+        //    pay>=100000/ 20% 할인 : pay - 0.2*pay
+        let pay = 100000;
+        if (pay>=100000) {
+            document.write(`<p>할인금액 : ${pay - 0.2*pay}</p>`);
+        } else if (pay>=50000) {
+            document.write(`<p>할인금액 : ${pay - 0.1*pay}</p>`);
+        } else if (pay>=10000) {
+            document.write(`<p>할인금액 : ${pay - 0.05*pay}</p>`);
+        }
 
     </script>
 </body>
