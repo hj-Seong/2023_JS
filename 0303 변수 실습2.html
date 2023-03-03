@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 나이를 출력할 공간 -->
+    <p id="currentAge">현재 나이는 00입니다</p>
+    <!-- 자바스크립트 공간-->
+    <script>
+        // 1. prompt을 통해서 태어난 년도 값 받아옴
+        let bornYear = prompt("태어난 연도를 입력하세요", "1980");
+
+        // 2. 현재 년도와 태어난 년도를 계산해서 현재 나이구함
+        // prompt로 받아온 값은 문자열, 계산할때 주의
+        let age = 2023 - bornYear + 1;
+
+        // 3. html p태그를 찾아 화면에 나이 출력
+        document.getElementById("currentAge").innerHTML
+                    = `현재 나이는 ${age}세 입니다`;
+
+        // 4. console.log를 이용해서 isNaN사용해서 출력
+        console.log( isNaN(age) );
+    </script>
+</body>
+</html>
