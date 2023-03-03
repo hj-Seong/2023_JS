@@ -47,6 +47,36 @@
             // 4. 거짓일때 : 걸어갑니다
             document.write("<p>걸어갑니다</p>")
         }
+
+        /* if - else if - else 조건문*/
+        // 조건식이 많을때, 
+        // else if를 통해 조건을 추가할수 있다
+        // 1. 변수 : dust
+        // 2. 조건식/참일때 실행할 내용 :
+        // dust <= 30 /좋음 출력  
+        // dust <= 80 /보통 출력
+        // dust <= 150 /나쁨
+        // 그외 (else) / 매우나쁨
+        let dust = 10;
+        if(dust<=30) {
+            document.write("<p>좋음</p>");
+        } else if (dust<=80) {
+            document.write("<p>보통</p>");
+        } else if (dust<=150) {
+            document.write("<p>나쁨</p>");
+        } else {
+            document.write("<p>매우 나쁨</p>");
+        }
+
+        // if else if 연습
+        // 1. 변수 : mathScore
+        // 2. 조건식/참:
+        //   90점이상/A
+        //   80점이상/B
+        //   70점이상/C
+        //   이하의 점수/F
+
+
     </script>
 </body>
 </html>
