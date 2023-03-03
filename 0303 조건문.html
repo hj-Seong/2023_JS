@@ -39,6 +39,33 @@
         if ( 점수 >= 60) {
             document.write("<p>합격입니다</p>")
         }
+
+        document.write("<hr>");
+        document.write("<h1>if-else</h1>");
+        /* if-else조건문*/
+        // 참일때의 내용과 거짓일때의 내용을 다르게 작성할 때 사용
+        let isSwitch = false;
+        if (isSwitch) {
+            // 조건식이 참일때 실행
+            document.write("<p>전등이 켜졌습니다</p>");
+        } else {
+            // 조건식이 거짓일때 실행
+            document.write("<p>전등이 꺼졌습니다</p>");
+        }
+
+        // 문자열로 조건식 작성(==)
+        // word = "의자"; /같지않을때 아니다출력
+        let word = "의자";
+        // 조건식이 같지 않다가 들어갔을때
+        // 기호(비교연산자) 기준으로 확인
+        if (word != "의") {
+            // 조건식의 결과 true
+            document.write("<p>!= 기호를 맞게썼다</p>")
+        } else {
+            // 조건식의 결과 false
+            document.write("<p>!= 맞지 않게 썼다</p>")
+        }
+
     </script>
 </body>
 </html>
