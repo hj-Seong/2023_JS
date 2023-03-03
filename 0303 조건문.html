@@ -66,6 +66,44 @@
             document.write("<p>!= 맞지 않게 썼다</p>")
         }
 
+        document.write("<hr>");
+        document.write("<h1>중첩조건문</h1>")
+        /* 조건이 여러개가 있을때 
+            if문안에 if문을 사용할수 있다*/
+        // 첫번째 조건 : 지하철이 파업했다
+        // 두번째 조건 : 버스가 파업했다
+        let subwayWalkout = false; // true 지하철 파업
+        let busWalkout = false // true 버스 파업
+        if (subwayWalkout) {
+            //지하철이 파업이 true
+            if (busWalkout) {
+                //버스 파업이 true
+                document.write("<p>택시를 탄다</p>");
+            } else {
+                //버스 파업이 false
+                document.write("<p>버스를 탄다</p>");
+            }
+        } else {
+            //지하철 파업 false 
+            document.write("<p>지하철을 탄다</p>")
+        }
+
+        // if-else if 조건문
+        // 1조건 지하철파업 > 2조건 버스파업 > 택시
+        // if-else if: 참인 조건을 먼저 실행
+        //>> 지하철 파업X :(참) 지하철탑승
+        //   지하철이 파업O>버스파업X :(참) 버스탑승
+        //   지하철이 파업O>버스파업o : (else)택시탑승
+        if (subwayWalkout == false) {
+            document.write("<p>지하철 탄다</p>")
+        } else if (!busWalkout) {
+            //!busWalkout 값을 부정해서 
+            // busWalkout == false 식과 동일한 값을 만든다
+            document.write("<p>버스 탄다</p>")
+        } else {
+            document.write("<p>택시 탄다</p>")
+        }
+
     </script>
 </body>
 </html>
