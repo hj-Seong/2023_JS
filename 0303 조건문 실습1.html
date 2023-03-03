@@ -70,11 +70,32 @@
 
         // if else if 연습
         // 1. 변수 : mathScore
-        // 2. 조건식/참:
+        // 2. 조건식/참일때 출력:
         //   90점이상/A
         //   80점이상/B
         //   70점이상/C
-        //   이하의 점수/F
+        //   이하의 점수(else)/F
+        let mathScore = 95;
+        if (mathScore>=90) {
+            document.write("<p>A</p>");
+        } else if (mathScore>=80) {
+            document.write("<p>B</p>");
+        } else if (mathScore>=70) {
+            document.write("<p>C</p>");
+        } else {
+            document.write("<p>F</p>");
+        }
+        // if문 으로 작성하기
+        if (mathScore>= 90) {
+            document.write("<p>A</p>");
+        }
+        // 두 값의 범위가 둘다 참일때 출력 : &&
+        if (mathScore>= 80 && mathScore<90) {
+            document.write("<p>B</p>");
+        }
+        if (mathScore>= 70 && mathScore<80) {
+            document.write("<p>C</p>");
+        }
 
 
     </script>
