@@ -51,6 +51,40 @@
             document.write(`<p>${i}</p>`)
         }
 
+        /* 배열과 반복문 */ 
+        // 1. 반복횟수 : 배열의 길이
+        let scores = [60, 50, 70, 55, 100];
+        // 1)in - index
+        for(let i in scores) {
+            document.write(`<p>${scores[i]}</p>`);
+            // 조건문 : 변수(scores[i]), 조건식(>=60)
+            if (scores[i]>=60) {
+                document.write(`<p>${scores[i]}점:합격</p>`);
+            } else {
+                document.write(`<p>불합격</p>`);
+            }
+        }
+
+        // 2)배열의 길이를 이용한 for
+        for(let i=0; i<scores.length;i++) {
+            // 조건문 : 변수(scores[i]), 조건식 (>=60)
+            if(scores[i]>=60) {
+                document.write(`<p>${scores[i]}점:합격</p>`);
+            } else {
+                document.write(`<p>불합격</p>`);
+            }
+        }
+
+        // 3)of - 배열안의 값
+        for(let score of scores ) {
+            document.write(`<p>${score}</p>`);
+            if (score>=60) {
+                document.write(`<p>${score}점:합격</p>`);
+            } else {
+                document.write(`<p>불합격</p>`);
+            }
+        }
+
     </script>
 </body>
 </html>
