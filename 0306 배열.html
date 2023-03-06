@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 자료형 : 배열 - 여러개의 자료를 저장하는 자료형
+        let numbers = [1,2,3,4];
+        document.write(`<p>${numbers}</p>`);
+
+        // 인덱스 : 배열안의 자료형에 접근하기위한 번호
+        // 0부터 시작
+        document.write(`<p>${numbers[0]}</p>`);
+        // 인덱스로 꺼내쓴 자료형은 그 자료형 자체로 사용할수 있다
+        document.write(`<p>${numbers[3]+1}</p>`);
+
+        // 배열에 없는 공간에 접근하면 undefined값을 출력한다
+        // undefined가 나오면 원치않은 결과가 나올수 있다
+        document.write(`<p>${numbers[4]+1}</p>`);
+
+        // 배열 연습
+        // mathScores : 50, 60, 70, 80, 100
+        // mathStudents : "홍길동", "장발장", 
+        //               "그린" , "성춘향", "흥부"
+        // 장발장과 70 이라는 값을 document 를 통해 출력
+        let mathScores = [50, 60, 70, 80, 100];
+        let mathStudents 
+            = ["홍길동", "장발장","그린" , "성춘향", "흥부"];
+        document.write(`<p>${mathScores}</p>`);
+        document.write(`<p>${mathStudents}</p>`);
+
+        document.write(`<p>${mathStudents[1]}</p>`);
+        document.write(`<p>${mathScores[2]}</p>`);
+        
+        // 배열 확인 
+        // typeof()로 object라는 값이나오기에
+        // Array.isArray(), intanceof Array를 통해 확인
+        document.write(`<p>${Array.isArray(mathScores)}</p>`);
+        document.write(`<p>${mathStudents instanceof Array}</p>`);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1~10 까지 증가하여 출력
+        // 1. 몇 번 반복할지 확인.
+        // 2. 초기값과 증가값, 조건식 
+
+        // 1~10까지 10번 반복
+        // 1) i의 값을 1로 시작
+        for (let i = 1; i<=10 ;i++) {
+            document.write(`<p>${i}</p>`)
+        }
+
+        // 2) i의 값을 0으로 시작
+        for(let i=0; i<10; i++) {
+            document.write(`<p>${i+1}</p>`)
+        }
+
+        // 10부터 1까지 카운트다운
+        // 1. 반복할 횟수 : 10번반복
+        // 2. 초기값과 증가감소식, 조건식
+        
+        // 1) 초기값= 10, 감소식(--) , i>0
+        // 초기값과 증가감소식을 확인하여 조건식작성
+        for(let i=10; i>0 ;i--) {
+            document.write(`<p>${i}</p>`);
+        }
+
+        // 2) 초기값= 0, 1씩 증가(++), i<10(10번)
+        // 반복문안에서 계산: 10-i
+        for( let i=0; i<10; i++ ) {
+            document.write(`<p>${10-i}</p>`)
+        }
+
+    </script>
+</body>
+</html>
