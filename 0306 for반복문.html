@@ -25,6 +25,18 @@
         // for안에서 사용한 변수는 for 바깥으로 나가면 없어진다
         // document.write(`<p>${i}</p>`);
         // document.write(`<p>${test}</p>`);
+
+        document.write('<hr>')
+        /* for문과 배열 */
+        // in : 배열의 요소갯수 만큼 반복
+        let numbers = ["일","이","삼"];
+        for (i in numbers) {
+            // i의 값은 인덱스의 값
+            document.write(`<p>${i}</p>`);
+            // numbers[인덱스]를 통해 배열안의 값을 가져올수있다
+            document.write(`<p>${numbers[i]}</p>`);
+        }
+        document.write(`<p>배열의 길이:${numbers.length}</p>`)
     </script>
 </body>
 </html>
