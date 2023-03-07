@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* while 반복문 실습 */
+        // 반복 : prompt() 값 입력받음
+        // 반복조건 : answer != "20"
+
+        let answer = "20"; // while문 확인할때는 ""넣어주기
+        while (answer != 20) {
+            // answer을 받아와서 값을 비교
+            answer = prompt("10+10?");
+        }
+        document.write("<p>정답입니다</p>");
+
+        // 0이 입력될때까지 입력받는 숫자를 더하고 (while)
+        // 종료 후 출력 
+        // + 숫자가 아닌 경우에는 더하지 않는다(if)
+        // > 숫자라면 더한다 !isNaN(숫자)=!false => true
+        
+        // 반복내용 : prompt 값을 받아오는 것
+        // 반복조건 : number != 0 
+        // 조건문 : 변수(number), 
+        //    조건식(isNaN(number)==false, !isNaN(number))
+
+        let number = "";
+        let sum = 0;
+        while(number != "0") {
+            // (조건)값을 더하고 (반복)값을 입력받음
+            if(isNaN(number)== false) {
+                sum += Number(number);
+            }
+            number = prompt("숫자를 넣으면 다 더해집니다. (종료:0)");
+        }
+        document.write(`<p>총합:${sum}</p>`)
+
+    </script>
+</body>
+</html>

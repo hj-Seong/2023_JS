@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 반복문 while*/
+        // while(조건식) {반복할 내용}
+        // 횟수를 계산하거나, 조건식에 들어갈 변수!
+
+        // while문을 이용하여 세번 반복
+        let num = 0; //초기값
+        while (num<3) { 
+            document.write("<p>세번 반복합니다</p>");
+            num++; //증감식
+        }
+
+        // 값을 받아와서 참일때만 반복하는 while문
+        let password = "123";
+        // 비밀번호를 맞췄을때(false) 반복이 멈춤
+        // 비밀번호를 틀렸을때(true) 반복
+        // !(password == "000") >> password에 값을 넣어서 결과값 확인
+        while (password != "000") { // while의 조건식이 참(true)일때 반복
+            password = prompt("비밀번호를 입력해주세요");
+        }
+        document.write("<p>비밀번호를 제대로 입력했습니다</p>");
+    </script>
+</body>
+</html>
