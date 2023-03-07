@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // break를 사용하여 1~10 까지 출력 후 빠져나오기
+        // 반복 : 1~10 출력 while(true), 초기값(1), num++
+        // break 조건문 : num == 10 
+        let num = 1;
+        while (true) {
+            document.write(`<p>${num}</p>`);
+            if(num == 10) {
+                break;
+            }
+            num++;
+        }
+
+        // continue를 이용하여 3의배수 출력X
+        // 반복 : 1~10
+        // coutinue 조건문 : 3의 배수일때
+        for(let i = 1; i <= 10 ; i++) {
+            if( i%3 == 0 ) {
+                continue;
+            }
+            document.write(`<p>${i}</p>`);
+        }
+
+    </script>
+</body>
+</html>

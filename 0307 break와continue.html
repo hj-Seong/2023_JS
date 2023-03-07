@@ -58,6 +58,15 @@
             document.write(`<p>${num2}</p>`);
         }
 
+        // for문 안에 사용되는 continue
+        for(let i = 0; i<5 ;i++) {
+            // 홀수 if - continue
+            if( i%2 == 1) {
+                continue;
+            }
+            //짝수 출력
+            document.write(`<p>${i}</p>`);
+        }
     </script>
 </body>
 </html>
