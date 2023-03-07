@@ -110,6 +110,14 @@
             }
         }
 
+        /* 중첩반복문 실습 - 구구단*/
+        // 바깥반복문 (2단~9단)
+        // 안쪽반복문 (1~9)
+        for ( let dan = 2; dan<=9 ; dan++ ) {
+            for (let j = 1; j<=9 ;j++) {
+                document.write(`<p>${dan}X${j}=${dan*j}</p>`);
+            }
+        }
     </script>
 </body>
 </html>
