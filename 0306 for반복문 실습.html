@@ -118,6 +118,57 @@
                 document.write(`<p>${dan}X${j}=${dan*j}</p>`);
             }
         }
+
+        document.write("<hr>");
+        /* 반복문 연습 */
+        // 반복:배열의 갯수
+        let jsScores = [60,70,80,90,40,70,70];
+        let jsSum = 0;
+        for (let i=0; i<jsScores.length ; i++) {
+            //document.write(jsScores[i]);
+            //jsSum = jsSum + jsScores[i];
+            jsSum += jsScores[i];
+            
+            // 모두 더한 합을 얻고싶다면 for문이 끝난 후에 사용
+            // document.write(jsSum);
+        }
+        document.write(`<p>${jsSum/jsScores.length}</p>`);
+        
+        // 1~100 까지의 수중 홀수만 더한 합
+        // 반복문 : 1~100 반복
+        // 조건문 : 홀수 /참일때 할일 : 값들을 합함
+        let oddSum = 0;
+        for(let i = 1; i<=100; i++) {
+            if(i%2 == 1) {
+                oddSum += i;
+            }
+        }
+        document.write(`<p>${oddSum}</p>`);
+        
+        // 1~100까지 3의 배수와 5배수의 합 구하기
+        // 반복 : 1~100
+        // 조건 : i%3 ==0, i%5==0 / 참일때 숫자들을 합함
+        let sum2 = 0;
+        for (let i =1; i <=100 ; i++) {
+            if( i%3==0 || i%5==0) {
+                //console.log(i);
+                sum2 += i;
+            }
+        }
+        document.write(`<p>${sum2}</p>`)
+
+        let sum3 =0;
+        for(let i =1; i<=100; i++) {
+            if ( i%3 == 0 ) {
+                //console.log(i)
+                sum3 += i;
+            } else if( i%5 == 0 ) {
+                //console.log(i)
+                sum3 += i;
+            }
+        }
+        document.write(`<p>${sum3}</p>`)
+
     </script>
 </body>
 </html>
