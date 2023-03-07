@@ -87,8 +87,28 @@
 
         /* 반복문과 조건문 실습 */
         // 1~100까지 짝수만 출력하세요
+        // 반복문 : 1~100 횟수, 1, i<=100 ,i++
+        // 조건문 : 변수 i, 조건식:짝수 > i%2 ==0
+        for(let i=1;i<=100;i++) {
+            if(i%2 == 0) {
+                document.write(`<span>${i} </span>`)
+            }
+        }
+        document.write("<hr>")
+        //if문을 쓰지않고 증감식의 값을 바꿔서 출력
+        for(let i = 2; i<=100; i+=2) {
+            document.write(`<span>${i} </span>`)
+        }
+
+        document.write("<hr>")
         // 1~50까지 7의 배수만 출력하세요
-        
+        // 반복문 : 1~50, i=1, i<=50, i++
+        // 조건문 : 변수 i, i%7 == 0
+        for (let i=1; i<=50 ;i++) {
+            if(i%7 == 0) {
+                document.write(`<span>${i} </span>`)
+            }
+        }
 
     </script>
 </body>
