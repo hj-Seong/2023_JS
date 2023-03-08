@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 함수 작성 공간*/
+        // 매개변수를 가지고 리턴값은 없는 함수
+        function introName(name) {
+            // 내용실행
+            document.write(`<p>안녕하세요. ${name}입니다</p>`);
+            print(`안녕하세요. ${name}입니다`);
+        }
+        // 값을 입력했을때 document.write(`<p></p>`);
+        function print(string) {
+            document.write(`<p>${string}</p>`);
+        }
+
+        // 매개변수를 가지고 리턴값을 가지는 함수
+        function introNameReturn(name) {
+            //return `안녕하세요 ${name}입니다`;
+            return "안녕하세요 "+name+"입니다";
+        }
+
+        // 함수 작성
+        function area(num1, num2) {
+            let result = num1*num2;
+            return result;
+        }
+
+    </script>
+</head>
+<body>
+    <script>
+        introName("홍길동");
+        introName("성춘향");
+        // 가장 안쪽()에 있는 내용부터 실행된다
+        print(introNameReturn("홍길동"));
+        
+        // 함수를 만들기 전에 
+        // script에서 확인 후 함수에 넣기
+        // 매개변수 > 매개변수의 이름과 임의의 값
+        // 실행내용 > 그대로 작성
+        // 리턴값 > 변수에 넣어서 확인
+        let num1 = 4;
+        let num2 = 3;
+        let returnResult; // 리턴값 확인
+        let result; // 사각형 넓이의 값
+        // 실행내용
+        result = num1 *num2;
+        // 리턴결과 확인 
+        returnResult = result; // 리턴해서 돌려줄값
+        print(returnResult); // 리턴값이 나온것을 확인 > 함수
+
+        //////////////////////////////////////////
+        // 위의 내용을 바탕으로 작성한 함수 호출
+        print(area(4,3));
+        print(area(5,10));
+
+    </script>
+</body>
+</html>
