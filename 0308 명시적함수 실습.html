@@ -49,6 +49,23 @@
             return num1+num2;
         }
 
+        // 두 수를 곱하는 함수
+        // 매개변수에 기본값을 정해 줄수있다
+        function multiply(a, b=1) {
+            return a*b;
+        }
+
+        // 나머지 매개변수를 사용하여 값을 가져오는 함수
+        // 가져온 값은 배열의 형태
+        function addAll(...number) {
+            let sum = 0;
+            for ( let i=0; i<number.length ; i++) {
+                sum += number[i];
+            }
+            return sum;
+        }
+
+
     </script>
 </head>
 <body>
@@ -105,6 +122,18 @@
 
         print(add(5));
         print(add(5,5));
+
+        print(multiply(5));
+        print(multiply(5,3));
+
+        // 나머지 매개변수를 사용하는 함수
+        // 인수가 몇개가 들어갈지 모를 때 배열로 받아온다
+        document.write("<p>",
+                "안녕 ","두번째 내용입니다",
+                "</p>");
+
+        print(addAll(1,2,3,4,5));
+        print(addAll(5)); // [5]
     </script>
 </body>
 </html>
