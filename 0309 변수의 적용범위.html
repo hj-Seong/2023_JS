@@ -52,7 +52,33 @@
         // 함수안에서 let으로 정의한 변수는 
         // 함수 밖에서 사용할 수 없음
         // document.write(`<p>${number}</p>`);
+        
+        // 전역변수의 이름과 지역변수의 이름을 같을때
+        // 무엇을 먼저 가져오는가?
+        let text = "전역변수";
+        if(true) {
+            // 블록, 함수에서 동일한 이름을 가지고 있다면
+            // 지역 변수 값을 가장 먼저 들고 온다
+            let text = "지역변수";
+            document.write(`<p>${text}</p>`);
+        }
+        document.write(`<p>${text}</p>`);
 
+        //////////////////////////////////////
+        /* var : 변수를 만드는 키워드 */
+        // 동일한 이름이 있어도 변수 만들 수 있다
+        var book = "흥부놀부";
+        var book = "자바스크립트 입문";
+        document.write(`<p>${book}</p>`)
+
+        var bookTitle = ["흥부놀부","자바스트립트 입문"];
+        for(let i=0 ; i<bookTitle.length; i++) {
+            document.write(`<p>${bookTitle[i]}</p>`)
+        }
+        // 다른 js에서 동일한 이름을 쓰고 있어도
+        // 새로 만드는 변수처럼 쓸수가 있어서, 
+        // 변수가 새로운 변수인지 알수없다 
+        // 그래서 var 보다 let을 이용해서 작성
     </script>
 </body>
 </html>
