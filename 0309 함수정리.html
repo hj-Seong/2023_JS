@@ -30,6 +30,13 @@
             }
         }
 
+        // 구구단 출력 함수
+        function gugudan(dan) {
+            for(let i=1; i<=9; i++ ) {
+                document.write(`<p>${dan}X${i}=${dan*i}</p>`);
+            }
+        }
+
     </script>
 </head>
 <body>
@@ -72,8 +79,18 @@
         print("오늘 미세먼지는 "+dustCheck(40)+"입니다");
 
         // 구구단의 단을 입력했을때 그 단을 출력하는 내용을 작성하고
-        // 함수로 만드세요
-
+        // 함수로 만드세요 * 함수에서도 결과 바로 출력(return X)
+        // 반복 : 구구단 num *(1~9)
+        let dan = 4;
+        for(let i=1; i<=9; i++ ) {
+            document.write(`<p>${dan}X${i}=${dan*i}</p>`);
+        }
+        //////////////////////////////////
+        // 위의 내용으로 만든 함수 호출
+        // print(), document.write()에 넣어서 출력하지 않는 이유
+        // gugudan이라는 함수에서 return을 사용하지 않았기 때문
+        gugudan(3); 
+        gugudan(15);
     </script>
 </body>
 </html>
