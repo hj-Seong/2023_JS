@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 함수 선언식은 코드 실행 흐름에 영향이 없기 때문에 
+        *  head안의 script로 따로 빼서 작성한다
+        */
+        // document.write(`${}`); 함수
+        // 바꾸고자하는 내용 = 변수(매개변수)
+        // 매개변수의 값은 선언할때 정해지지않고
+        // 호출할때 정해진다
+        function print(string) {
+            document.write(`<p>${string}</p>`);
+        } // return 값이 없으면 undefined로 값을 전달
+
+        // 미세먼지 판별 함수
+        function dustCheck(dust){
+            if(dust<=30) {
+                return "좋음";
+            }else if (dust<=80) {
+                return "보통";
+            }else if (dust<=150) {
+                return "나쁨";
+            } else {
+                return "매우나쁨";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <script>
+        /* 함수를 만들기 전에 확인하는 방법*/
+        // 매개변수 > 변수 = 임의의 값
+        // 실행할 내용 > 변수의값을 넣어서 실행
+        let string = "그린아카데미입니다";
+        document.write(`<p>${string}</p>`);
+        //////////////////////////////////
+        //위의 내용으로 만든 함수 호출
+        print("반갑습니다"); 
+        // 호출한 공간에서 return값 가져옴 
+        // 이때 변수에 담아주지않으면 값은 사라진다
+        // 3+4와 같은 값을 변수에 담지 않으면 사라짐
+
+        // 미세먼지 판별 조건문 > 함수로 만들기.
+        // 1. 변수 : dust
+        // 2. 조건식/참일때 return 내용 :
+        // dust <= 30 / 좋음
+        // dust <= 80 / 보통
+        // dust <= 150 / 나쁨
+        // 그외 (else) / 매우나쁨
+
+        let dust = 130; // 매개변수
+        if(dust<=30) {
+            print("좋음");
+        }else if (dust<=80) {
+            print("보통");
+        }else if (dust<=150) {
+            print("나쁨");
+        } else {
+            print("매우나쁨");
+        }
+        ////////////////////////////////////
+        // 위의 내용으로 만든 함수 호출
+        // 함수안에서 print 또는 document.write로 호출하지 않고
+        // return으로 자료형을 주는 것은 값을 받아와서 
+        // 수정 또는 계산하기 위함
+        print("오늘 미세먼지는 "+dustCheck(40)+"입니다");
+
+        // 구구단의 단을 입력했을때 그 단을 출력하는 내용을 작성하고
+        // 함수로 만드세요
+
+    </script>
+</body>
+</html>
