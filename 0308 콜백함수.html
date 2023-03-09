@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 콜백함수 : 작성한 함수를 다른 함수의 값으로 넣어서 사용*/
+        // 다른 함수의 값으로 들어가기에 ()제외하고 이름만 사용
+        function callback() {
+            document.write("<p>콜백함수입니다</p>")
+        }
+        // 코드상에서 그 내용을 사용할때는 ()붙여서 실행.
+        callback();
+
+        // 콜백함수로 사용되는 때.
+        // 다른 함수안에서 함수를 실행하고 싶을때
+        // 이름만 전달해서 사용 : 그 안에 코드자체가 들어감
+        setInterval(callback,1000);
+
+        // setInterval(콜백함수, ms)
+        //  : 밀리초마다 콜백함수의 내용을 반복하는 함수
+
+        // 콜백함수를 받아오는 함수는 
+        // 받아온 콜백 함수를 어떻게 쓰는가?
+        // 위의 callback 함수를 받아와서 출력하는 함수
+        function callbackCheck(f) {
+            // let f = function() {}이 들어옴
+            f();
+            document.write("<p>콜백함수를 불러와서 출력</p>")
+        }
+        // 함수의 내용을 전달할때는, 이름만 적어주면 내용전달
+        callbackCheck(callback);
+
+        // 함수의 코드내용이 나타난다.
+        document.write(callback);
+
+        // 함수를 다른 이름의 변수에 저장을 할수있다
+        // ex) 표현식함수 let f = function(){};
+        let copyCallback = callback;
+        copyCallback();
+
+        // 함수를 매개변수로 갖는 함수에서 
+        // 함수 자체를 바로 넣어줄 수 있다 > 익명함수
+        setInterval(function() {
+            document.write("<p>익명함수입니다</p>")
+        },1000);
+
+    </script>
+</body>
+</html>
