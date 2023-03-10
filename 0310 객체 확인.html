@@ -58,13 +58,27 @@
         
         /* 생성자 함수 : 값을 받아와서 객체를 만드는 함수*/
         // 생성자 함수는 구분을 위해 첫글자 대문자
-        function Dog(color, name, age){
+        function Dog(color, name){
             // 객체의 속성할당
             this.name = name;
-            this.age = age;
+            // 원하는 값을 직접 할당 할 수 있다
+            this.age = 0;
             this.color = color;
+            // 메소드 작성
+            this.eat = function(){
+                return `${this.name}는 밥을 먹습니다`;
+            }
         }
         let dog1 = new Dog("흰색","백구",1);
+
+        // 없는 속성에 접근해도 오류가 발생하지않고 undefined를 출력
+        console.log(dog1.family);
+
+        // 없는 속성에 값을 넣어주면 그 값이 할당되어 사용할수 있다
+        dog1.family = "진도개";
+        console.log(dog1.family);
+        
+
     </script>
 </body>
 </html>
