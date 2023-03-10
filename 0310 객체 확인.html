@@ -29,6 +29,42 @@
         puppy.eat()
         console.log(puppy)
 
+        // 리터럴 표기를 이용한 객체 생성 실습
+        let person = {
+            // 속성
+            name : "홍길동",
+            address :"부산",
+            // 메소드
+            intro : function() {
+                return `${this.name}입니다. ${this.address}에 거주중입니다`;
+            }
+        }
+
+        // 리터럴 표기를 이용한 객체 생성 실습 2
+        let myCookie = {
+            //속성
+            shape : "원",
+            flavor : "초코",
+            //메소드
+            intro : function() { 
+                // this는 자기자신의 객체를 가져온다
+                return `${this.shape}모양의 ${this.flavor}맛입니다`;
+            },
+            count : function(number) {
+                return `${number}개 있습니다`;
+            }
+        }
+        myCookie.intro();
+        
+        /* 생성자 함수 : 값을 받아와서 객체를 만드는 함수*/
+        // 생성자 함수는 구분을 위해 첫글자 대문자
+        function Dog(color, name, age){
+            // 객체의 속성할당
+            this.name = name;
+            this.age = age;
+            this.color = color;
+        }
+        let dog1 = new Dog("흰색","백구",1);
     </script>
 </body>
 </html>
