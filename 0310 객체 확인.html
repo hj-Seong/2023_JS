@@ -78,6 +78,53 @@
         dog1.family = "진도개";
         console.log(dog1.family);
         
+        // 생성자 함수이용한 객체 생성 실습1
+        function Student(name, score) {
+            this.name = name;
+            this.score = score;
+            this.study = function(){
+                // score값을 10씩 증가 +10
+                // this.score = this.score+10;
+                this.score += 10;
+            }
+            this.showScore = function(){
+                return this.score;
+            }
+        }
+
+        let myStudent = new Student("홍길동",70);
+        let yourStudent = new Student("성춘향",80);
+
+        // 생성자 함수를 이용한 객체 생성 실습2
+        function BusCard(money) {
+            // 객체 속성
+            this.money = money;
+            // 객체 메소드
+            // 1) money에 입력받은 금액을 더하는 메소드
+            // this.money(객체 안에서 접근하는 값)
+            // cash(메소드의 매개변수)
+            this.charge = function(cash){
+                this.money += cash;
+            },
+            // 2) 버스를 탈때, 1500원 지불/없다면 잔액 부족 알림
+            // 조건 : 객체의 money가 1500 크거나 같다
+            // 참: money -=1500/ 거짓 : console.log("잔액부족")
+            this.takeBus = function(){
+                if (this.money >= 1500) {
+                    this.money -=1500;
+                } else {
+                    console.log("잔액부족");
+                }
+            },
+            // 3) 객체의money의 값을 return하는 메소드
+            this.showMoney = function(){ return this.money }
+        }
+    
+        let myBusCard = new BusCard(1500);
+        let yourBusCard = new BusCard(1000);
+
+        // this는 자기자신의 객체를 가져온다
+        myBusCard.charge(1000);
 
     </script>
 </body>
