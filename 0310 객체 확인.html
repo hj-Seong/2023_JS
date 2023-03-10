@@ -154,6 +154,29 @@
 
         // 객체 - 자료형중의 하나, 속성값, 메소드를 가진다.
         // this - 자기 자신을 호출하는 키워드
+
+        // delete 연습 : 객체의 속성/메소드 삭제
+        delete myMessege.name;
+        // name속성이 삭제되어 undefined로 출력
+        console.log(myMessege.showMessege());
+
+        // 객체 안의 속성/메소드 반복
+        // for ... in
+        for(let i in puppy) {
+            document.write(
+                "<p>"+i+":"+puppy[i]+"</p>"
+            );
+        }
+
+        // for in 실습
+        for(let i in yourMessege) {
+            document.write(`<p>${i}</p>`);
+        }
+
+        for(let i in myBusCard) {
+            document.write(`<p>${myBusCard[i]}</p>`)
+        }
+
     </script>
 </body>
 </html>
