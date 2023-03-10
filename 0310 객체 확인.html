@@ -125,7 +125,35 @@
 
         // this는 자기자신의 객체를 가져온다
         myBusCard.charge(1000);
+        
+        // 생성자 함수를 이용한 객체 생성 실습 3
+        function Messege(name, content, time) {
+            // 객체 속성
+            this.name = name;
+            this.content = content;
+            this.time = time;
+            // 객체 메소드 
+            this.modufyMessege = function(messege){
+                this.content = messege;
+            },
+            this.showMessege = function(){
+                return `${this.name}님께서 ${this.content}를 ${this.time}에 보냈습니다`;
+            }
+        }
 
+        let myMessege = new Messege("홍길동","반갑습니다","0224");
+        let yourMessege = new Messege("성춘향","안녕하세요","0224");
+
+        // 생성자 함수로 만든 객체는 객체의 메소드에 접근 가능
+        let num = Number(123);
+        // 어떤 메소드인지는 모르지만 메소드에 접근해서 쓸 수 있다
+        num.toExponential();
+
+        // 가장 많이 사용한 document의 메소드
+        document.write("<p>객체에 들어가 있는 함수를 메소드라고 한다</p>");
+
+        // 객체 - 자료형중의 하나, 속성값, 메소드를 가진다.
+        // this - 자기 자신을 호출하는 키워드
     </script>
 </body>
 </html>
