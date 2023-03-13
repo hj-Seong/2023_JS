@@ -73,6 +73,33 @@
         array.pop()
         document.write(`<p>${array}</p>`);
 
+        /* String - 문자열*/
+        // String은 배열과 유사하다
+        let string = "홍길동";
+        // charAt() 0~n : 문자열의 인덱스 위치에있는 값을 가져옴
+        document.write(`<p>${string.charAt(1)}</p>`);
+        document.write(`<p>${string[1]}</p>`);
+
+        // match() : 지정된 문자와 동일한 문자찾기
+        // 값이 있을때는 그 값을 return 하고 없으면 null
+        document.write(`<p>${string.match("홍")}</p>`);
+        // search() : 지정된 문자와 동일한 문자찾기
+        // 값이 있을때는 그 인덱스값 return 없으면 -1
+        document.write(`<p>${string.search("홍")}</p>`);
+
+        // replace(a,b) :a의 값을 b로 대체
+        // string값은 그대로 두고 결과값만 바꿔서 출력
+        string.replace("홍","김");
+        document.write(`<p>${string}</p>`);
+        document.write(`<p>${string.replace("홍","김")}</p>`);
+        
+        // split() 문자열을 자르는 메소드 
+        // return값으로 배열을 돌려준다
+        // 전화번호, 주민등록번호 등과 같이 기호로 나뉘는 문자열
+        document.write(`<p>${string.split("길")}</p>`)
+        document.write(`<p>${ Array.isArray(string.split("길"))} </p>`)
+
+        
     </script>
 </body>
 </html>
