@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 자바스크립트 정리 (조건~객체) */
+        // for 10~1 까지 출력
+        for(let i = 10; i >= 1; i--) {
+            console.log(i);
+        }
+
+        // 배열의 내용을 for of를 이용하여 출력
+        let numArray = [1,2,3,4];
+        for (let num of numArray ) {
+            console.log(num);
+        }
+
+        // for in 배열의 값을 출력하기
+        let flowerArray = ["해바라기", "튤립", "장미"];
+        for (let i in flowerArray ) {
+            console.log(flowerArray[i]);
+        }
+
+        // 6의 약수를 구하는 방법
+        // 조건 : 6을 1~6까지 나눴을때 0으로 나눠 떨어지는 수
+        // 반복 : 1~6까지
+        let num = 6;
+        for (let i =1; i<= num; i++) {
+            if (num%i == 0) {
+                console.log(i);
+            }
+        }
+
+        // 제곱을 출력하는 식
+        // 같은 수를 여러 번 곱하는 것
+        // 여러번 반복 > 반복문
+        let a = 2; // 첫번째 값
+        let b = 3; // 두번째 값
+        let result = 1;
+        for (let i = 0 ; i < b ; i++) {
+            // result *= a;
+            result = result *a;
+        }
+        console.log(result);
+        //////////////////////////////////
+        function power(a,b=2) {
+            let result = 1;
+            for (let i = 0 ; i < b ; i++) {
+                // result *= a;
+                result = result *a;
+            }
+            return result;
+        }
+        const myStorage = {
+            car: {
+                inside: {
+                    gloveBox: "maps",
+                    passengerSeat: ["first", "second"]
+                },
+                    outside: {
+                    trunk: "jack"
+                }
+            }
+        };
+
+        // 리터럴 객체 생성
+        let book = {    
+            title : "Nature of Code",
+            pay : 30000, // 가격 계산 - number
+            writer : "다니엘 쉬프만",
+            ISBM : "9788968481901",
+            page : 620 // 페이지 수로 인한 계산 - number
+        }
+
+        // 생성자 함수 작성
+        function Product(name, pay) {
+            this.name = name;
+            this.pay = pay;
+            this.keep = function(){
+                return this.name+"을 보관했습니다";
+            }
+            this.getPay = () => this.pay;
+        }
+        let book1 = new Product("book",6000);
+        let pencil = new Product("pencil", 2000);
+        let hat = new Product("hat", 8000);
+
+        // 생성자 함수 User
+        function User(id, money) {
+            this.id = id ;
+            this.money = money;
+            this.buyList = [];
+            this.charge = function(plusMoney) {
+                return this.money += plusMoney
+            }
+            this.buy = function(product){
+                // User의 money에서 product.getPay() 값 계산
+                // this = User
+                this.money -= product.getPay();
+                // product.name의 값을 buyList배열의 메소드인 push()에 추가
+                // 미리만들어둔 객체의 메소드나 속성을 사용할 수 있다
+                this.buyList.push(product.name);
+            }
+        }
+
+        let harry = new User("harry",10000);
+        
+        </script>
+</body>
+</html>
