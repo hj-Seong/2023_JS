@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 다양한 객체의 사용법*/
+        // 객체 안에 객체를 넣어서 사용
+        let memo = {
+            title : "오늘 할일",
+            todo : {
+                morning: ["청소", "준비"],
+                afternoon : ["수업"],
+                evening : ["정리","독서"]
+            }
+        }
+        // 객체 안의 객체의 값에 접근하는 방법
+        document.write(`<p>${memo.todo.morning[0]}</p>`);
+
+        // 배열 안에 객체
+        let todoList = [ 
+            {time : "아침", todo:"청소"},
+            {time : "오전", todo:"수업"},
+            {time : "오후", todo:"독서"}    
+        ];
+        // 배열 안에 객체의 속성값을 찾는 법
+        document.write(`<p>${todoList[1].todo}</p>`);
+    </script>
+</body>
+</html>
