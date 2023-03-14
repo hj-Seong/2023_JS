@@ -23,6 +23,13 @@
         <input type="text" id="name">
     </form>
 
+    <ul id="list2">
+        <li>요소</li>
+        <li>요소</li>
+        <li>요소</li>
+        텍스트
+    </ul>
+
 
     <script>
         /* DOM : 도큐먼트 오브젝트 모델 : 문서객체 모델 */
@@ -88,6 +95,36 @@
         console.log(input);
         // null에서 속성을 접근할수 없기때문에 오류가 출력된다
         input.disabled = "true";
+
+        // DOM요소의 스타일 속성
+        classElement.style.backgroundColor="rgb(255,255,0)";
+        title2.style.textDecoration = "line-through";
+        listLi[0].style.color="blue";
+        for (let i = 0; i < listLi.length ; i++) {
+            // 객체의 속성의 특징 : 없는 속성에 값을 할당
+            listLi[i].style.color="blue";
+        }
+
+        // Node : DOM객체의 내용을 text/element/attr로 구분
+        // 객체를 글자와 태그와 속성으로 구분하는 단위
+        // .childNodes 에서 태그와 글자로 구분되어 들어가 있음
+
+        // 노드로의 접근
+        // 부모 : parentNode, parentElement
+        // 자식 배열 : childNodes, children
+        // 첫번째, 마지막 자식 : firstChild, firstElementChild
+        // 형제 : nextSibling, nextElementSibling / previousSibling
+        // 각 부모나 형제로 접근한 뒤에 (변수에 할당한 후)
+        // 그 속성에 다시 부모나 형제자식에게 접근 가능
+
+        // list의 2번째 li인 CSS 값을 출력
+        // 1) list 요소에 .을 통해 찾기
+        console.log( "요소찾기" 
+            , list.firstElementChild.nextElementSibling);
+
+        // 2) list 요소의 첫번째 자식을 변수로 저장한 후 찾기
+        let child = list.firstElementChild;
+        console.log("요소찾기", child.nextElementSibling);
     </script>
 </body>
 </html>
