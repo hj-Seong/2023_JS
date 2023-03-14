@@ -99,6 +99,32 @@
         document.write(`<p>${string.split("길")}</p>`)
         document.write(`<p>${ Array.isArray(string.split("길"))} </p>`)
 
+        /* Date 객체 - 날짜/시간 */
+        let today = new Date();
+        // 날짜 : 달을 가져올때 달의 값의 범위가 0~11이기에 1을 더해서 사용
+        document.write(`<p>${today.getFullYear()}년${today.getMonth()+1}월${today.getDate()}일</p>`);
+    
+        // 시간
+        document.write(`<p>${today.getHours()}시${today.getMinutes()}분${today.getSeconds()}초</p>`);
+
+        // 일월화수목금토(0~6) > 배열[인덱스] / 조건문
+        document.write(`<p>${today.getDay()}</p>`);
+        // getTime : 시작시간과 끝시간을 이용해서 전체 걸린 시간 체크
+        document.write(`<p>${today.getTime()}</p>`);
+        // ex) for문을 실행할때 걸리는 시간
+        let startTime = new Date();
+        for (let i = 0 ;i<1000;i++) {
+            console.log(i);
+        }
+        let endTime = new Date();
+        document.write(`<p>${endTime-startTime}</p>`);
+
+        // date객체의 set메소드
+        today.setFullYear(2020);
+        document.write(`<p>${today.getFullYear()}</p>`)
+
+        //UTC날짜
+        document.write(`<p>${today.getUTCHours()}시${today.getUTCMinutes()}분</p>`)
         
     </script>
 </body>
