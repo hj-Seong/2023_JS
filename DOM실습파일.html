@@ -30,7 +30,28 @@
     </div>
 
     <script>
+        // DOM객체를 가져와서 HTML 내용 수정
+        // h1태그를 가져와서 수정
+        // 1) 값, 2)style - color/backgroundColor
+        let h1 = document.querySelector("h1");
+        h1.innerHTML = "DOM 이용한 수정";
+        h1.style.color = "#0000FF";
+        h1.style.backgroundColor = "lightgray";
 
+        // ul태그를 가져와서 삭제/추가
+        // 1) ul태그의 첫번째 자식 삭제
+        // 2) ul태그에 li태그 자식 추가 1)li태그, 2)text작성 3)추가
+        let ul = document.querySelector("ul");
+        ul.firstElementChild.remove();
+
+        let li = document.createElement("li");
+        li.innerHTML = "새로 추가한 노드요소입니다";
+        ul.appendChild(li);
+
+        // ol태그를 가져와서 삭제/수정
+        // 값 수정 : 첫번째자식
+        // 삭제 : 두번째(childNodes/children)
+        //       네번째(lastChild)
     </script>
 
 </body>
