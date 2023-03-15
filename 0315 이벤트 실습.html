@@ -18,7 +18,16 @@
 
     <script>
         function gugudanPrint() {
-            // p태그에 출력이 어렵다면 콘솔창에 출력
+            // 구구단을 출력하기위해 입력받은 숫자값 들고옴
+            let dan = document.querySelector("#dan").value;
+            
+            // for문을 이용하여 구구단을 출력
+            for (let i = 1; i<=9; i++) {
+                // p태그에 출력이 어렵다면 콘솔창에 출력
+                console.log(`${dan}X${i}=${i*Number(dan)}`);
+            }
+            // p태그로 출력
+            // ul태그를 만들어서 li생성하여 출력
         }
     </script>
 </body>
