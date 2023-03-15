@@ -176,7 +176,38 @@
         // ul태그의 첫번째 자식으로 들어가서 자기자신 삭제
         // return X
         ul.firstElementChild.remove();
-        
+
+        // 노드 관리 실습 - 생성 / 추가
+        let p = document.createElement("p");
+        body.appendChild(p);
+        let textNode = document.createTextNode("textnode를 이용한 텍스트입니다");
+        p.appendChild(textNode);
+        // body.appendChild(textNode); // 동일한내용을 사용하려면 복제
+        // 요소의 속성값 수정
+        p.style.color="blue";
+        textNode.nodeValue = "<span>textNode</span>의 nodeValue접근하여 수정"
+        // innerHTML과 textNode의 차이
+        // textNode는 그 안에 들어가는 내용은 모두 글자로 들어간다
+        // textContent도 동일하게 모두 글자로 들어감
+        // innerHTML은 그 안에 태그를 작성하면 태그는 반영해서 사용한다
+
+        // 노드 관리 실습 - 삭제
+        p.removeAttribute("style");
+        ul.removeChild(ul.firstElementChild);
+        ul.remove();
+
+        // 노드 관리 실습 - 복제
+        // 복제한 요소를 변수 넣어서 추가
+        let h1Copy = h1.cloneNode(true);
+        body.appendChild(h1Copy);
+        // 변수로 넣어서 추가하면, 변수을 통해 제어가능
+        h1Copy.removeAttribute("style");
+
+        // 복제한 요소를 바로 추가
+        body.appendChild(p.cloneNode(true));
+        // 변수에 할당하지않고 추가하면 자바스크립트에서 제어할 수 없다
+        // 다시 document.querySelector를 통해 가져와서 제어할 수 있다
+
     </script>
 </body>
 </html>
