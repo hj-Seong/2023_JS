@@ -49,9 +49,34 @@
         ul.appendChild(li);
 
         // ol태그를 가져와서 삭제/수정
-        // 값 수정 : 첫번째자식
-        // 삭제 : 두번째(childNodes/children)
+        // 값 수정 : 첫번째 자식
+        // 삭제 : 두번째(childNodes/children) / 형제노드
         //       네번째(lastChild)
+        let ol = document.querySelector("ol");
+        ol.firstElementChild.innerHTML = "내용을 바꾸었습니다";
+        // ol.children[1].remove(); 
+        ol.firstElementChild.nextElementSibling.remove();
+
+        // div class="main"의 p태그의 span태그
+        // style color = "red"
+        let span = document.querySelector(".main span");
+        span.style.color = "red";
+
+        // span태그를 통해 부모로 접근해서 p태그 복제
+        let p = span.parentNode;
+        // 동일한 내용을 수정없이 복제할 경우 
+        // 변수에 넣지않고 작성가능
+        let main = document.querySelector(".main");
+        // main.append(p.cloneNode(true));
+        // main.append(p.cloneNode(true));
+
+        // 위의 내용을 for문으로작성
+        for (let i = 0; i<5 ; i++) {
+            main.append(p.cloneNode(true));
+        }
+
+
+
     </script>
 
 </body>
