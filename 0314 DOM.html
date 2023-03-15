@@ -125,6 +125,58 @@
         // 2) list 요소의 첫번째 자식을 변수로 저장한 후 찾기
         let child = list.firstElementChild;
         console.log("요소찾기", child.nextElementSibling);
+
+        // 노드접근 실습 1
+        // h1태그의 childNode
+        let h1 = document.querySelector("h1");
+        console.log(h1.childNodes[0].nodeValue);
+
+        // li태그의 parentNode와 nextElementSibling
+        let li = document.querySelector("li");
+        console.log(li.parentNode.nextElementSibling);
+
+        // ul태그의 firstChild와 nextSibling
+        let ul = document.querySelector("ul");
+        console.log(ul.firstChild.nextSibling);
+
+        // 노드 관리 - 생성과 추가
+        let element2 = document.createElement("h2");
+        // 속성과 텍스트 생성
+        let attr = document.createAttribute("style");
+        let text = document.createTextNode("h2태그생성");
+        // 속성 추가
+        element2.setAttributeNode(attr);
+        // 글자 추가 :textNode이므로 appedChild를 통해 추가
+        element2.appendChild(text);
+        //body에 추가
+        let body = document.querySelector("body");
+        body.appendChild(element2);
+
+        // 속성과 태그안의 글자의 경우
+        // DOM 속성에 접근해서 값을 바꿀수 있다
+        element2.style.color="blue";
+        element2.innerHTML = "값 작성";
+        element2.textContent = "값 수정";
+
+        // 동일한 객체를 다른 곳에 추가
+        ul.appendChild(element2);
+        // body에 들어간 element2가 ul로 이동
+        // 동일한 객체는 html문서에서 한개 사용 가능
+
+        // 동일한 객체를 여러번 html문서에 사용하고싶을때
+        // 노드를 복제해서 사용
+        /* 객체(배열)을 동일한 새로운 객체를 만들때 메소드사용 */
+        let element3 = element2.cloneNode(true);
+        body.appendChild(element3);
+        element3.innerHTML ="요소3"
+
+        // 노드의 삭제
+        // ul태그의 첫번째 자식 li삭제 > return DOM
+        ul.removeChild(ul.firstElementChild);
+        // ul태그의 첫번째 자식으로 들어가서 자기자신 삭제
+        // return X
+        ul.firstElementChild.remove();
+        
     </script>
 </body>
 </html>
