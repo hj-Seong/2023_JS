@@ -106,10 +106,11 @@
         // let과 달리 const로 작성한 변수는 그 값을 재할당 할 수 없음
         // 유일값
         const p2 = document.querySelector("#p2");
-        p2.addEventListener("mouseenter", function(){
+        p2.addEventListener("mouseenter", function(e){
             p2.style.color="red";
-            // 이벤트객체들고와서 백그라운드컬러gray
-            
+            console.log(e)
+            // 이벤트 객체 들고와서 백그라운드 컬러 gray
+            e.target.style.backgroundColor = "gray";
         });
 
         // li와 같이 여러개의 태그에 같은 이벤트 추가
