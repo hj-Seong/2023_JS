@@ -30,8 +30,18 @@
     <button id="btn">메소드로 이벤트를 추가</button>
     <!-- -->
     <p id="p2">마우스를 올리면 빨간색으로 바뀌는 이벤트를 추가</p>
+    <ul id="ullist">
+        <li>첫번째</li>
+        <li>두번째</li>
+        <li>세번째</li>
+    </ul>
 
-    
+    <!-- 이벤트 객체를 사용하기위한 태그 -->
+    <p onclick="printText()">태그를 클릭하면 글자가바뀝니다</p>
+    <!-- 동일한 이벤트와 함수를 연결 -->
+    <p id="p3">태그를 클릭하면 글자가 바뀝니다</p>
+
+
     <script>
         /* HTML태그에서 이벤트가 발생했을때 실행할 내용 작성*/
         // 함수로 만들어서 onclick이벤트에 전달
@@ -91,6 +101,44 @@
         // 실행할 함수 작성
         function printButton(){
             btn.innerHTML = "버튼을 눌렀습니다"
+        }
+
+        // let과 달리 const로 작성한 변수는 그 값을 재할당 할 수 없음
+        // 유일값
+        const p2 = document.querySelector("#p2");
+        p2.addEventListener("mouseenter", function(){
+            p2.style.color="red";
+            // 이벤트객체들고와서 백그라운드컬러gray
+            
+        });
+
+        // li와 같이 여러개의 태그에 같은 이벤트 추가
+        // 배열(querySelectorAll)로 들고와서 for문 
+        const liList = document.querySelectorAll("#ullist>li");
+        console.log(liList[0]);
+        for (let i=0 ; i<liList.length ; i++) {
+            liList[i].addEventListener("click", function() {
+                // 랜덤하게 색이 바뀜
+                // 색이 바뀜 : style.color
+                // 랜덤(무작위) : Math.random() : 0~1 소수의 난수
+                // 랜덤 숫자 : 0~255가 나와아함 : Math.random*256(정수)
+                // 정수로 사용하기위해 Math.floor()
+                let r = Math.floor(Math.random()*256);
+                let b = Math.floor(Math.random()*256);
+                let g = Math.floor(Math.random()*256);
+                liList[i].style.color = `rgb(${r},${g},${b})`;
+            })
+        }
+
+        /* 이벤트 객체를 활용한 함수 작성 */
+        let p3 = document.querySelector("#p3");
+
+        // 이벤트 객체는 이벤트 리스너가 전달
+        // html속성에서는 이벤트 객체X > undefined
+        p3.addEventListener("click", printText)
+        function printText(e) {
+            e.target.innerHTML = "값이 바뀝니다";
+            console.dir(e)
         }
     </script>
 </body>
