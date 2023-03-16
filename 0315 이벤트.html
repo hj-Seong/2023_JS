@@ -22,6 +22,16 @@
     <!-- p태그를 가져와서 값 넣어주기 -->
     <p id="textprint"></p>
 
+    <!-- input 태그에 onfouse, onblur -->
+    <input type="text" id="input2" onblur="inputColor()" onfocus="inputColor2()"> 
+    <button>확인</button>
+
+    <!-- JS에 DOM으로 들고와서 메소드로 이벤트 추가 -->
+    <button id="btn">메소드로 이벤트를 추가</button>
+    <!-- -->
+    <p id="p2">마우스를 올리면 빨간색으로 바뀌는 이벤트를 추가</p>
+
+    
     <script>
         /* HTML태그에서 이벤트가 발생했을때 실행할 내용 작성*/
         // 함수로 만들어서 onclick이벤트에 전달
@@ -56,6 +66,31 @@
             } else {
                 button.style.color = "red";
             }
+        }
+        
+        // onblur() - inputColor()
+        function inputColor() {
+            let input = document.querySelector("#input2");
+            input.style.backgroundColor = "";
+        }
+        function inputColor2() {
+            let input = document.querySelector("#input2");
+            input.style.backgroundColor = "gray";
+        }
+
+        /* HTML에서 태그를 DOM요소 들고와서 메소드로 이벤트 추가 */
+        let btn = document.querySelector("#btn");
+        // 가져온 DOM요소에 이벤트와 실행할 함수
+        btn.addEventListener("click", printButton);
+        // 가져온 DOM요소에 이벤트와 실행할 익명함수
+        btn.addEventListener("mouseenter", 
+            function(){
+                btn.innerHTML="마우스를 올렸습니다"
+        });
+
+        // 실행할 함수 작성
+        function printButton(){
+            btn.innerHTML = "버튼을 눌렀습니다"
         }
     </script>
 </body>
