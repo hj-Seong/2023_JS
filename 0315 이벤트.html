@@ -41,6 +41,30 @@
     <!-- 동일한 이벤트와 함수를 연결 -->
     <p id="p3">태그를 클릭하면 글자가 바뀝니다</p>
 
+    <!-- p태그에 addEventListener를 통해 이벤트 2개 작성 -->
+    <!-- 사용할 이벤트 click, dblclick -->
+    <!-- function changeColor(e){} 이벤트 객체 사용-->
+    <!-- 이벤트 객체를 통해서 이벤트 타입을 구분 -->
+    <p id="p4" >
+        태그를 클릭하면 글자 색이 파란색으로 바뀌고 
+        태그를 더블 클릭하면 백그라운드 색이 회색으로 바뀐다
+    </p>
+    <!-- h3태그를 만들어서 미리 만든 changeColor사용 -->
+    <h3 id="h3">
+        이벤트 객체를 사용하면 동일한 함수를 
+        다른 태그에 사용 가능
+    </h3>
+
+    <!-- changeColor 클릭/더블클릭했을때 함수 실행 -->
+    <ul id="ullist2">
+        <li>이벤트가 적용된 태그입니다</li>
+        <li>이벤트가 적용된 태그입니다</li>
+        <li>이벤트가 적용된 태그입니다</li>
+        <li>이벤트가 적용된 태그입니다</li>
+        <li>이벤트가 적용된 태그입니다</li>
+    </ul>
+
+
 
     <script>
         /* HTML태그에서 이벤트가 발생했을때 실행할 내용 작성*/
@@ -141,6 +165,27 @@
             e.target.innerHTML = "값이 바뀝니다";
             console.dir(e)
         }
+
+        // p4를 가져와서 이벤트와 함수작성
+        const p4 = document.querySelector("#p4");
+        p4.addEventListener("click", changeColor);
+        p4.addEventListener("dblclick", changeColor);
+
+        // 사용할 함수
+        function changeColor(e){
+            // 이벤트에 따라서 
+            console.log(e.type)
+            if(e.type=="click") {
+                e.target.style.color = "blue";
+            }else if(e.type=="dblclick") {
+                e.target.style.backgroundColor = "gray";
+            }
+        }
+
+        // h3태그에 미리 만든 함수적용
+        let h3 = document.querySelector("h3");
+        h3.addEventListener("click", changeColor);
+        h3.addEventListener("dblclick", changeColor);
     </script>
 </body>
 </html>
