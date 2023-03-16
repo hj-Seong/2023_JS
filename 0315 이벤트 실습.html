@@ -15,6 +15,9 @@
     <div id="gugudan">
         <p></p>
     </div>
+    <div id="child">
+
+    </div>
 
     <script>
         function gugudanPrint() {
@@ -54,6 +57,24 @@
             let body = document.querySelector("body");
             body.appendChild(ul);
         }
+
+        // function gugudnaPrint에서 사용한 for문을 풀어쓴 코드
+        let li = document.createElement('li');
+        li.innerHTML = `1`;
+        document.querySelector("body").appendChild(li);
+
+        li = document.createElement('li');
+        li.innerHTML = `2`;
+        document.querySelector("body").appendChild(li);
+
+        li = document.createElement('li');
+        li.innerHTML = `3`;
+        document.querySelector("body").appendChild(li);
+
+        // 변수 할당 
+        let num = 1;
+        num = 10;
+        num = 10 + 5;
     </script>
 </body>
 </html>
