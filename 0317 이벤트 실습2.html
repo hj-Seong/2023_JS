@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .on {
+            text-decoration: line-through;
+            background-color: black;
+            /* 자바스크립트로 class이름을 추가할때 전환 효과 사용 */
+            transition: background-color 0.5s;
+        }
+
+        /* CSS만 사용해서 체크했을때 디자인 추가 */
+        .list>li>input[type="checkbox"]:checked+span {
+            color: gray;
+            text-decoration: underline wavy;
+            /* 전환효과 사용가능 */
+            transition: all 0.5s;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- -->
+    <h1>이벤트 실습</h1>
+    <p id="p1">눌러주세요</p>
+    
+    <!-- 체크리스트 -->
+    <ol>
+        <li id="first_list">
+            <input type="checkbox" name="" id="checkbox">
+            첫번째 리스트입니다
+        </li>
+    </ol>
+
+    <ol id="checklist">
+        <li><input type="checkbox"> 첫번째 </li>
+        <li><input type="checkbox"> 두번째 </li>
+        <li><input type="checkbox"> 세번째 </li>
+    </ol>
+
+    <ul class="list">
+        <li><input type="checkbox"> <span>첫번째</span></li>
+        <li><input type="checkbox"> <span>두번째</span></li>
+    </ul>
+
+    <!-- div태그안에 이미지 넣어서 사용
+        이때 이미지를 클릭했을때 다른 이미지로 바뀌기
+        CSS 백그라운드 이미지 바꾸기 (classList사용)
+        1) class img에 원래이미지 넣기
+        2) class change-img에 다른 이미지로 바꾸기
+    -->
+    <div id="img" class="img"></div>
+
+
+
+    <script>
+        // 이벤트 리스너를 이용한 이벤트추가
+        const p1 = document.querySelector("#p1");
+        p1.addEventListener("click", function(e) {
+            if (e.target.innerHTML != "숨겨진 단어입니다") {
+                e.target.innerHTML = "숨겨진 단어입니다";
+                e.target.style.color = "red";
+            } else {
+                e.target.innerHTML = "눌러주세요";
+                e.target.style.color = "";
+            }
+        })
+
+        // 체크리스트 input태그 클릭했을때
+        // li태그 색 바꾸기
+        const checkbox = document.querySelector("#checkbox");
+        checkbox.addEventListener("click",check);
+
+        function check(e) {
+            // li태그의 색상을 lightgray로 수정
+            // input:checkbox : e.target
+            const li = e.target.parentNode;
+            // e.target의 checked가 true일때 색상 바꿈
+            if(e.target.checked) {
+                li.style.color = "lightgray";
+                // classList 접근 / add()함수
+                li.classList.add("on");
+            } else {
+                li.style.color = "";
+                // classList 접근 / remove()함수
+                li.classList.remove("on");
+            }
+        }
+
+        // 체크리스트 li요소 배열 들고와서 동일한 이벤트 추가
+        const checklist = document.querySelectorAll("#checklist>li>input[type='checkbox']")
+        for( let i = 0 ; i<checklist.length ; i++) {
+            checklist[i].addEventListener("click",check)
+        }
+    </script>
+</body>
+</html>
