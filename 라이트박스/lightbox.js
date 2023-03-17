@@ -19,10 +19,12 @@ for (let i =0 ; i <pics.length ; i++) {
 function showLightbox(e) {
     //이미지 수정
     // data-이름 작성한 값은 dataset을 통해 접근
-    let img = e.target.dataset.src;
+    const imgTag = e.target;
+    let img = imgTag.dataset.src;
 
     // 이미지값을 가져와서 lightbox의 이미지에 추가
-    lightbox.firstElementChild.src = img;
+    const lightboxImage = lightbox.firstElementChild;
+    lightboxImage.src = img;
 
     //라이트 박스 보임
     lightbox.style.display = "block";
