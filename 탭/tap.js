@@ -24,5 +24,8 @@ function onTap(e) {
     }
 
     // on클래스 추가
+    // e.target은 이벤트가 발생한 태그자체
+    // 이벤트를 붙여준 btnList[0],btnList[1],btnList[2] 중 하나
     e.target.parentNode.classList.add("on");
+    console.log(e.target)
 }

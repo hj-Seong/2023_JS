@@ -13,7 +13,9 @@ a { text-decoration: none; color: black; }
 .tab_menu .list {
     display: flex;
     height: 170px;
+
 }
+
 /* a버튼 */
 .tab_menu .list li .btn {
     padding: 0px 5px;
