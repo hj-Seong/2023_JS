@@ -60,7 +60,9 @@
 
             const response = await promise.json();
             console.log(response);
-            // 전역변수에 response값을 저장해서 전달가능
+            // 전역변수에 response값을 저장해서 전달 가능
+            // 함수에서 전역변수의 값을 저장 및 수정할 때,
+            // 순서 확인하고 사용하기 (언제 값이 들어오는지)
             data = response;
             
             // 0부터 9까지 인덱스 출력
