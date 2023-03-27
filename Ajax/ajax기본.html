@@ -8,6 +8,8 @@
 </head>
 <body>
     <h1>Ajax실행</h1>
+    <p>비동기 자바스크립트</p>
+
     <h3>기본 브라우저 실행</h3>
     <ol>
         <li>이벤트 발생</li>
@@ -129,6 +131,8 @@
 
                     // 실습
                     // id가 ajax-json인 p태그에 "홍길동"을 출력하세요
+                    const ajaxJson = document.querySelector("#ajax-json");
+                    ajaxJson.innerHTML = data.object.name;
                 }
             }
         })
