@@ -28,6 +28,20 @@
 
     <h2>Ajax를 이용한 값 가져오기</h2>
     <button id="ajax-btn">ajax를 이용한 값</button>
+    <p id="ajax-text"></p>
+
+    <h2>웹에서 값을 가져오는 형태 JSON</h2>
+    <p>
+        자바스크립트의 객체와 동일한 모양을 하고있고
+        웹에서 값을 전달할 때 사용하게 된다
+    </p>
+
+    <h3>a태그로 들고온 JSON</h3>
+    <a href="./data.json">JSON 값</a>
+
+    <h3>Ajax를 이용하여 들고온 JSON</h3>
+    <button id="ajax-btn-json">Ajax JSON 값</button>
+    <p id="ajax-json"></p>
 
     <script>
         // 버튼을 눌렀을때 ajax 실행
@@ -66,12 +80,59 @@
         // 클릭이벤트 /  ajax 실행
         const ajaxBut = document.querySelector("#ajax-btn");
         ajaxBut.addEventListener("click", function(){
-            /* 작성한 후 버튼 클릭하여 확인 : 11시20분*/
+            /* 작성한 후 버튼 클릭하여 확인*/
             // XMLHTTP객체 생성
+            const req = new XMLHttpRequest();
+
             // 서버 요청 "./data.txt"
+            req.open("GET", "./data.txt");
             // 요청 전송
+            req.send();
             // onreadstatechange 메소드 수정하여 값 확인
+            req.onreadystatechange = function() {
+                if( this.readyState == 4 && this.status ==200){
+                    console.log("들고온값 : ",this.response);
+                    console.log("자료형확인 : ",typeof(this.response));
+                    // 값을 Dom에 넣어서 사용가능
+                    const ajaxText = document.querySelector("#ajax-text");
+                    ajaxText.innerHTML = this.response;
+                }
+            }
         })
+
+        // 버튼을 클릭했을때 
+        // ajax를 이용해서 JSON 데이터가져오기
+        const ajaxBtnJson = document.querySelector("#ajax-btn-json");
+        ajaxBtnJson.addEventListener("click", function() {
+            const req = new XMLHttpRequest();
+            req.open("GET","./data.json");
+            req.send();
+            req.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status== 200) {
+                    console.log("JSON 값",req.response);
+                    // req.response로 받아온 값은 항상 문자열
+                    // JSON으로 받아온 값은 메소드를 통해 변환해서 사용
+                    console.log(typeof(req.response));
+
+                    // JSON.parse 통해 문자열에서 JSON(자바스크립트 객체)
+                    // 가져올 수 있음
+                    const data = JSON.parse(req.response);
+                    console.log(data);
+                    console.log(typeof(data));
+
+                    // 자바스크립트의 객체로 가져올 경우
+                    // .을 통해 그 안에 있는 값을 원래 자료형으로 들고올수있다
+                    console.log(data.id);
+                    console.log(data.text);
+                    console.log(data.list);
+                    console.log(data.object);
+
+                    // 실습
+                    // id가 ajax-json인 p태그에 "홍길동"을 출력하세요
+                }
+            }
+        })
+
     </script>
 </body>
 </html>
