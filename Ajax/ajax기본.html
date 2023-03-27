@@ -22,5 +22,56 @@
         <li>서버에서 Ajax요청 처리</li>
         <li>데이터를 가져와서 웹페이지 일부분 로딩</li>
     </ol>
+
+    <h2>a태그를 이용한 값 가져오기 - 기본브라우저 실행</h2>
+    <a href="./data.txt">text값</a>
+
+    <h2>Ajax를 이용한 값 가져오기</h2>
+    <button id="ajax-btn">ajax를 이용한 값</button>
+
+    <script>
+        // 버튼을 눌렀을때 ajax 실행
+        // 1) ajax가 실행되는 순서확인
+
+        // HTTP요청하기위한 객체 생성
+        const req = new XMLHttpRequest();
+        // 객체 확인
+        console.dir(req);
+        // readyState를 통해서 순서를 확인할 수 있다
+        console.log(req.readyState);
+
+        // 서버에 요청
+        req.open("GET","./data.txt");
+        // 요청 전송
+        req.send();
+        // 응답확인
+        // > 서버에 요청을 전송하고 바로 실행하면 값이 없다
+        // 서버에 요청 전송하고 값을 받아오는데 시간이 걸리기 때문     
+        // : 값을 바로 받아오지않고 값이 있을때 response실행
+        console.log(req.response);
+
+        // onreadystatechange : 메소드를 수정해서 사용
+        // readystate의 값이 바뀔때마다 실행될 내용작성
+        req.onreadystatechange = function() {
+            // this는 req객체를 가져옴
+            console.log("객체상태 : "+this.readyState);
+            console.log("응답번호 : "+this.status);
+            // 객체상태가 4, 응답번호가 200일때 값 호출
+            if ( this.readyState == 4 && this.status) {
+                console.log("값 : "+this.response);
+            }
+        }
+
+        // 버튼 객체를 들고와서 이벤트 작성
+        // 클릭이벤트 /  ajax 실행
+        const ajaxBut = document.querySelector("#ajax-btn");
+        ajaxBut.addEventListener("click", function(){
+            /* 작성한 후 버튼 클릭하여 확인 : 11시20분*/
+            // XMLHTTP객체 생성
+            // 서버 요청 "./data.txt"
+            // 요청 전송
+            // onreadstatechange 메소드 수정하여 값 확인
+        })
+    </script>
 </body>
 </html>
