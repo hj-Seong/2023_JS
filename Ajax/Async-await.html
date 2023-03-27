@@ -49,6 +49,22 @@
         const fetchBtn = document.querySelector("#fetch-btn");
         fetchBtn.addEventListener("click", doFetch);
 
+        // fetch-btn2를 누르면 fetchAPI를 이용하여 값 가져오기
+        const fetchBtn2 = document.querySelector("#fetch-btn2");
+        fetchBtn2.addEventListener("click", async function(){
+            const promise = await fetch("./data.json");
+            // 값이 잘못되었을 경우 : 함수 종료(return)
+            if ( !promise.ok ){
+                console.error("값이 존재하지않음", promise.ok);
+                return -1;
+            }
+            const response = await promise.json();
+
+            // 값을 가져와서 사용
+            const fetchJson = document.querySelector("#fetch-json");
+            fetchJson.innerHTML = response.object.address;
+        })
+
     </script>
 </body>
 </html>

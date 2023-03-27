@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>공공데이터 사용하기</h1>
+
+    <script>
+        // fetch - async/await를 이용해서 가져오기
+        async function getPublicData() {
+            // fetch()안에 주소 넣기
+            // 공공데이터의 주소에 서비스키와 관련정보를
+            // 이름=값&이름=값과 같이 넣어서 요청할 수 있다
+            // 모든 공공데이터의 규칙이 같지 않기에 반드시 문서 참고
+            const promise = await fetch("https://busan-food.openapi.redtable.global/api/menu-dscrn/korean?serviceKey=8rYKN119VsqkwOWcCX5cxgkFwQgiGj51CWX6JF9bHVf7r0XYmag5DdqKLyNyZXee&pageNo=2");
+            const response = await promise.json();
+            console.log(response);
+            // response의 값을 확인하고 
+            // body의 0번째 인덱스 내용 console에 출력
+            // body의 0번째 인덱스의 MENU_NM 출력 
+        }
+        getPublicData();
+
+    </script>
+</body>
+</html>
