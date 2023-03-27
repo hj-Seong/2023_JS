@@ -9,13 +9,12 @@
 <body>
     <h1>공공데이터 사용하기</h1>
     <!-- data 버튼을 눌렀을때 data-list에 
-        식당이름과 메뉴 10개 출력하기-->
+        식당이름과 메뉴 10개 출력하기 -->
     <button id="data">데이터 가져오기</button>
     <ul id="data-list">
         <li>식당이름, 메뉴</li>
     </ul>
 
-    
     <script>
         // fetch - async/await를 이용해서 가져오기
         async function getPublicData() {
@@ -46,6 +45,31 @@
         }
         getPublicData();
 
+        // 버튼을 클릭했을때 공공데이터를 들고오기
+        const dataBtn = document.querySelector("#data");
+        dataBtn.addEventListener("click", async () => {
+            const promise = await fetch("https://busan-food.openapi.redtable.global/api/menu-dscrn/korean?serviceKey=8rYKN119VsqkwOWcCX5cxgkFwQgiGj51CWX6JF9bHVf7r0XYmag5DdqKLyNyZXee&pageNo=2");
+            
+            if(!promise.ok) {
+                console.log("값이 없습니다");
+                return -1;
+            }
+
+            const response = await promise.json();
+            console.log(response);
+            
+            // 0부터 9까지 인덱스 출력
+            // 1. 반복문을 통해 작성
+            // 2. 반복문 안에서 태그 생성, 추가
+            const ulList = document.querySelector("#data-list");
+            
+            for (let i = 0; i<10 ; i++) {
+                const li = document.createElement("li");
+                li.innerHTML = `${response.body[i].RSTR_NM}, 
+                                ${response.body[i].MENU_NM}`;
+                ulList.appendChild(li);
+            }
+        })
     </script>
 </body>
 </html>
